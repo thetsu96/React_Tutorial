@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Create = () => {
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [author, setAuthor] = useState('');
     const [isPending, setIsPending] = useState(false);
+    const history = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -24,7 +26,10 @@ const Create = () => {
             setTitle('');
             setBody('');
             setAuthor('');
+            // history.go(1);
+            history('/')
         })
+
      }
 
     return ( 
